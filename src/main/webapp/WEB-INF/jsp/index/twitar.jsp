@@ -21,6 +21,10 @@
 			<c:forEach items="${pessoa.tweets}" var="tweet" >
 			
 				<p>${tweet.mensagem} </p>
+				<p>
+					<a href="${linkTo[IndexController].editar}?id=${tweet.id}"> Editar </a>
+					<a href="${linkTo[IndexController].excluir}?id=${tweet.id}"> Excluir </a>
+				</p>
 			
 			</c:forEach>
 			

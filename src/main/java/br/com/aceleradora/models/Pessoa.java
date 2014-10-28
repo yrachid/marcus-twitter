@@ -8,7 +8,8 @@ public class Pessoa {
 
 	private List<Tweet> tweets;
 	
-	private String nome;	
+	private String nome;
+	private int id;
 	
 	public String getNome() {
 		return nome;
@@ -18,6 +19,14 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public int getId() {
+		return id;
+	}
+		
 	public List<Tweet> getTweets() {
 		return tweets;
 	}
@@ -36,5 +45,7 @@ public class Pessoa {
 		
 		return tweets;
 	}
+	
+	
 
 }

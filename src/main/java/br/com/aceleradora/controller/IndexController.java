@@ -6,6 +6,7 @@ import br.com.aceleradora.models.BancoDeDados;
 import br.com.aceleradora.models.Pessoa;
 import br.com.aceleradora.models.Tweet;
 import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 
@@ -25,7 +26,7 @@ public class IndexController {
 	public void index(){
 		
 	}	
-	
+		
 	public List<Pessoa> twitar(Pessoa pessoa,Tweet tweet, Result result){
 		
 		int indicePessoa = banco.testaPessoa(pessoa.getNome());
@@ -35,7 +36,7 @@ public class IndexController {
 			banco.atualizaTweet(indicePessoa, tweet);			
 			
 		}else{
-			
+			tweet.setId(++banco.idTweet);
 			pessoa.adicionaTweet(tweet);		
 			banco.adicionaPessoa(pessoa);			
 		}

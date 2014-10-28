@@ -11,6 +11,8 @@ import br.com.caelum.vraptor.ioc.SessionScoped;
 public class BancoDeDados {
 	
 	private List<Pessoa> pessoas;
+	private static int idPessoa = 0;
+	public static int idTweet  = 0;
 	
 	public BancoDeDados(){
 		
@@ -18,7 +20,7 @@ public class BancoDeDados {
 	}
 	
 	public void adicionaPessoa(Pessoa pessoa ){
-		
+		pessoa.setId(++idPessoa);
 		pessoas.add(pessoa);
 	}
 	
