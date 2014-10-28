@@ -10,21 +10,43 @@ import br.com.caelum.vraptor.ioc.SessionScoped;
 @SessionScoped
 public class BancoDeDados {
 	
-	private List<Tweet> tweets;
+	private List<Pessoa> pessoas;
 	
 	public BancoDeDados(){
 		
-		tweets = new ArrayList<Tweet>();
+		pessoas = new ArrayList<Pessoa>();
 	}
 	
-	public void adicionaTweet(Tweet tweet){
+	public void adicionaPessoa(Pessoa pessoa ){
 		
-		tweets.add(tweet);
+		pessoas.add(pessoa);
 	}
 	
-	public List<Tweet> todosTweets(){
+	public List<Pessoa> todasPessoas(){
 		
-		return tweets;
+		return pessoas;
+	}
+	
+	public int testaPessoa(String nome){
+		
+		for (int i = 0; i < pessoas.size(); i++) {
+			
+			if(nome.equalsIgnoreCase(pessoas.get(i).getNome())){
+				
+				return i;
+			}
+		}	
+		return -1;
+	}
+	
+	public void atualizaTweet(int indice, Tweet tweet){
+		
+		pessoas.get(indice).adicionaTweet(tweet);
+	}
+	
+	public Pessoa findPessoa(int indicePessoa){
+		
+		return pessoas.get(indicePessoa);
 	}
 
 }

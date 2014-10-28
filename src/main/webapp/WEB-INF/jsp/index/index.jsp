@@ -13,8 +13,10 @@
 	<body>
 
 	<form action="${linkTo[IndexController].twitar}" method="post">
-		<label>Dado</label>
-			<input type="text" name="tweet.mensagem" placeholder="Digite seu nome aqui">
+		<label>Nome</label>
+			<input type="text" name="pessoa.nome" placeholder="Digite seu nome aqui">
+		<label>Menssagem</label>	
+			<input type="text" name="tweet.mensagem">
 			<input type="submit" name="enviar" value="Enviar">
 	</form>
 

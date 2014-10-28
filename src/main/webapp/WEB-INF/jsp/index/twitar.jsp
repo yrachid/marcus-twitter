@@ -13,9 +13,16 @@
 	</head>
 	<body>
 		<!-- Lembrar que a lista é de tweet ou de qualquer outra classe padrão VRaptor  -->
-		<c:forEach items="${tweetList }" var="tweet" >
+		<h2>Listando os Tweets</h2>
+		<c:forEach items="${pessoaList }" var="pessoa" >
 			
-			<p>${tweet.mensagem}</p>
+			<h3>${pessoa.nome}</h3>
+			
+			<c:forEach items="${pessoa.tweets}" var="tweet" >
+			
+				<p>${tweet.mensagem} </p>
+			
+			</c:forEach>
 			
 		</c:forEach>
 
